@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed&display=swap" rel="stylesheet">
+</head>
+<body>
+    <h1>🧮BMI Calculator <span id="lbs">(lbs and m)</span></h1>
+    <div class="container">
+        <div class="innercontent">
+            <input id="input3" type="text" placeholder="What is your weight? (in lbs)">
+            <input id="input4" type="text" placeholder="What is your height? (in m)">
+            <button class="button" id="butt2">Calculate</button>
+            <div id="weight"></div>
+        </div>
+    </div>
+
+    <a href="./index.html"><button id="changemode">Kilograms and Feet</button></a>
+
+<footer class="d-flex flex-wrap justify-content-between align-items-center py-3 my-4 border-top">
+    <p class="col-md-4 mb-0 text-body-secondary"> © Parallax</p>
+
+    <a href="./Stay Healthy.jpg"><button id="seclink" ></button></a>
+    <!-- <ul class="nav col-md-4 justify-content-end">
+      <li class="nav-item"><a href="./index.html" class="nav-link px-2 text-body-secondary">Home</a></li> -->
+  </footer>
+    <script>
+        document.querySelector("#butt2").addEventListener("click", calcBMI1)//lbs & m button
+
+        // lbs and m
+     function calcBMI1(weight1, height1) {
+   var weight1 = document.getElementById("input3").value
+   var height1 = document.getElementById("input4").value
+    var bmi = Math.round((weight1/2.204623)/(height1**2));
+    if (bmi < 18.5) {
+            alert("Your BMI is " + bmi + ", so you are underweight.");
+           }
+           else if (bmi === 18.5 || bmi <= 24.9) {
+            alert("Your BMI is " + bmi + ", so you have a normal weight.");
+           }
+           else if (bmi === 24.9 || bmi <= 29) {
+              alert("Your BMI is " + bmi + ", so you are overweight.");
+           }
+           else if (bmi === 30 || bmi <= 39) {
+               alert("Your BMI is " + bmi + ", so you are obese.");
+            }
+            else if (bmi === 39 || bmi <= 42) {
+               alert("Your BMI is " + bmi + ", so you are extremely obese.");
+            }
+            else {
+               alert(bmi + " ...bruh💀");
+       }
+   
+}
+    </script>
+</body>
+</html>
